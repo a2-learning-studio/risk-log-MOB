@@ -406,9 +406,24 @@
   .jmcta:hover,.jmcta:focus-visible{border-color:var(--goldb);outline:none}
   .jmctat{font-size:13px;font-weight:700;text-align:center;line-height:1.2;color:var(--goldb)}
   .jmlink{background:none;border:0;padding:0;color:var(--teal);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline}
-  .jmchat{position:fixed;top:0;right:0;width:min(430px,100vw);height:100vh;height:100dvh;z-index:10000;display:flex;flex-direction:column;
-    background:var(--paper);box-shadow:-10px 0 30px rgba(19,36,59,.28);border-left:1px solid var(--line)}
+  /* JMV2:BEGIN  Ask Jack Mo panel v2 (29 Oct 2026): docks beside the page, toggles, resizes, takes attachments */
+  :root{--jmw:clamp(340px,30vw,440px)}
+  .jmchat{position:fixed;top:0;right:0;width:var(--jmw);max-width:100vw;height:100vh;height:100dvh;z-index:10000;display:flex;flex-direction:column;
+    background:var(--paper);box-shadow:-10px 0 30px rgba(19,36,59,.22);border-left:1px solid var(--line)}
   .jmchat[hidden]{display:none}
+  .jmgrip{position:absolute;left:-5px;top:0;bottom:0;width:10px;cursor:ew-resize;z-index:3;touch-action:none}
+  .jmgrip::after{content:"";position:absolute;left:4px;top:50%;width:2px;height:44px;margin-top:-22px;border-radius:2px;background:var(--line);transition:background .15s}
+  .jmgrip:hover::after,.jmgrip:focus-visible::after,.jmgrip.drag::after{background:var(--goldb)}
+  .jmgrip:focus-visible{outline:none}
+  @media (min-width:980px){   /* wide screens: the page makes room, nothing is covered, the chat can stay open */
+    body.jm-docked{padding-right:var(--jmw)}
+    body.jm-docked .scr,body.jm-docked .ov,body.jm-docked .lightbox,body.jm-docked #faqov,body.jm-docked .doneov{right:var(--jmw)}
+    body.jm-docked .jmchat{box-shadow:-1px 0 0 var(--line)}
+  }
+  @media (max-width:979px){.jmgrip{display:none}}
+  @media (max-width:520px){.jmchat{width:100vw}}
+  .askjm{cursor:pointer}
+  .askjm[aria-expanded="true"]{border-color:var(--goldb);box-shadow:0 0 0 2px rgba(224,161,44,.35)}
   .jmhd{display:flex;align-items:center;gap:11px;background:var(--navy);color:#fff;padding:12px 14px}
   .jmhd b{font:700 17px Georgia,'Times New Roman',serif}.jmhd small{color:#cdd8e6;font-size:12px}
   .jmx{margin-left:auto;background:none;border:1px solid #2c4361;color:#fff;border-radius:6px;width:32px;height:32px;cursor:pointer;font-size:15px}
@@ -420,13 +435,35 @@
   .jmmsg.user{align-self:flex-end;background:var(--navy);color:#fff;border-top-right-radius:4px}
   .jmmsg.err{align-self:flex-start;background:var(--own);border:1px solid var(--rust);color:var(--ink)}
   .jmmsg ul{margin:4px 0 2px 18px;padding:0}.jmmsg p{margin:0 0 6px}.jmmsg p:last-child{margin:0}
+  .jmmsg .jmatts{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}
+  .jmmsg .jmatts img{width:84px;height:64px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:#fff}
+  .jmmsg .jmatts .f{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.14);border-radius:6px;padding:4px 8px;font-size:12px}
   .jmtyping{align-self:flex-start;color:var(--gray);font-size:13px;font-style:italic}
-  .jmform{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--line);background:#fff}
+  .jmtray{display:flex;gap:8px;flex-wrap:wrap;padding:9px 12px 0;background:#fff;border-top:1px solid var(--line)}
+  .jmtray[hidden]{display:none}
+  .jmchip{position:relative;display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:8px;padding:4px 28px 4px 4px;background:var(--paper);font-size:12px;max-width:190px}
+  .jmchip img,.jmchip .pdf{flex:0 0 40px;width:40px;height:40px;border-radius:5px;object-fit:cover}
+  .jmchip .pdf{background:var(--rust);color:#fff;font:700 11px/40px Arial,sans-serif;text-align:center}
+  .jmchip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .jmchip button{position:absolute;top:3px;right:3px;width:21px;height:21px;border:0;border-radius:50%;background:var(--navy);color:#fff;cursor:pointer;font-size:12px;line-height:21px;padding:0}
+  .jmchip button:focus-visible{outline:2px solid var(--goldb);outline-offset:1px}
+  .jmform{display:flex;gap:8px;padding:10px 12px 8px;background:#fff;align-items:stretch}
+  .jmtray[hidden] + .jmform{border-top:1px solid var(--line)}
   .jmform textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;min-height:44px;max-height:140px}
   .jmform textarea:focus{outline:2px solid var(--goldb);border-color:transparent}
-  .jmform button{background:var(--goldb);color:var(--navy);border:0;border-radius:8px;padding:0 16px;font-weight:700;cursor:pointer}
-  .jmform button:disabled{opacity:.5;cursor:default}
-  @media (max-width:520px){.jmchat{width:100vw}}
+  .jmtools{display:flex;flex-direction:column;gap:6px}
+  .jmtool{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);cursor:pointer;padding:0}
+  .jmtool:hover,.jmtool:focus-visible{border-color:var(--teal);color:var(--teal);outline:none}
+  .jmtool:disabled{opacity:.45;cursor:default}
+  .jmtool[hidden]{display:none}
+  #jmsend{background:var(--goldb);color:var(--navy);border:0;border-radius:8px;padding:0 16px;font-weight:700;cursor:pointer}
+  #jmsend:disabled{opacity:.5;cursor:default}
+  #jmsend:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+  .jmhint{font-size:11.5px;color:var(--gray);background:#fff;padding:0 12px 10px;line-height:1.35}
+  .jmhint.warn{color:var(--rust);font-weight:600}
+  .jmchat.dragover .jmlog{outline:2px dashed var(--goldb);outline-offset:-8px;background:rgba(224,161,44,.06)}
+  @media (prefers-reduced-motion:no-preference){.jmchat:not([hidden]){animation:jmin .2s ease-out}@keyframes jmin{from{transform:translateX(24px);opacity:.4}to{transform:none;opacity:1}}}
+  /* JMV2:END */
 </style></head>
 <body><div class="wrap">
 
@@ -437,7 +474,7 @@
     <h1>Risk Register — Midtown MOB</h1>
     <div class="rail" id="rail"></div>
   </div>
-  <button type="button" class="askjm" id="askjmbtn" onclick="jmOpen()" aria-label="Open the Ask Jack Mo chat"><span class="jmav" id="hjmqr" aria-hidden="true">JM</span><span class="t"><b>Ask Jack&nbsp;Mo</b><br>Chat with your<br>AI project manager</span></button>
+  <button type="button" class="askjm" id="askjmbtn" onclick="jmToggle()" aria-expanded="false" aria-controls="jmchat" aria-label="Open the Ask Jack Mo chat"><span class="jmav" id="hjmqr" aria-hidden="true">JM</span><span class="t"><b>Ask Jack&nbsp;Mo</b><br>Chat with your<br>AI project manager</span></button>
 </header>
 
 <div class="idbar">
@@ -533,7 +570,7 @@
   <button class="introplay" id="ipb3" onclick="playIntroGuide(3)" style="display:none">▶ Listen — meet Jack Mo</button>
   <p class="eyebrow2">Your guide on this job</p>
   <h1>Meet Jack Mo</h1>
-  <div class="jmcard"><button type="button" class="jmcta" id="jmqr2" onclick="jmOpen()" aria-label="Open the Ask Jack Mo chat"><span class="jmav big" aria-hidden="true">JM</span><span class="jmctat">Chat with<br>Jack&nbsp;Mo</span></button>
+  <div class="jmcard"><button type="button" class="jmcta" id="jmqr2" onclick="jmToggle()" aria-expanded="false" aria-controls="jmchat" aria-label="Open the Ask Jack Mo chat"><span class="jmav big" aria-hidden="true">JM</span><span class="jmctat">Chat with<br>Jack&nbsp;Mo</span></button>
     <div><p class="lead" style="margin:0"><b>Jack Mo</b> is a seasoned construction <b>project manager</b> — and your mentor on the Midtown MOB. He's watched these risks play out on real jobs, and he's here to help you learn to see them too.</p></div>
   </div>
   <h2>What Jack Mo does for you</h2>
@@ -2299,25 +2336,39 @@ document.addEventListener('mouseout',e=>{if(e.target.closest('.ci,.jmtab'))_hp.s
 setInterval(()=>{if(state.tm)persist();},120000);
 </script>
 
+<!-- JMV2:BEGIN -->
 <aside id="jmchat" class="jmchat" aria-label="Ask Jack Mo chat" hidden>
+  <div class="jmgrip" id="jmgrip" role="separator" aria-orientation="vertical" aria-label="Resize the chat (arrow keys)" tabindex="0"></div>
   <div class="jmhd"><span class="jmav" aria-hidden="true">JM</span><div><b>Jack Mo</b><br><small>Project Manager, Midtown MOB · AI coach</small></div>
-    <button type="button" class="jmx" onclick="jmClose()" aria-label="Close the chat">✕</button></div>
-  <div class="jmnote">Jack Mo coaches: he asks questions and points you to evidence, but he won't fill your cells. Please don't share personal information.</div>
+    <button type="button" class="jmx" onclick="jmClose()" aria-label="Close the chat" title="Close the chat">✕</button></div>
+  <div class="jmnote">Jack Mo coaches: he asks questions and points you to evidence, but he won't fill your cells. Please don't share personal information, in messages or in attachments.</div>
   <div id="jmlog" class="jmlog" aria-live="polite"></div>
+  <div id="jmtray" class="jmtray" aria-label="Files to send" hidden></div>
   <form id="jmform" class="jmform" onsubmit="return jmSend(event)">
+    <div class="jmtools">
+      <button type="button" class="jmtool" id="jmattach" aria-label="Attach an image or PDF" title="Attach an image or PDF (up to 3)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.4 11.1-8.9 8.9a5.5 5.5 0 0 1-7.8-7.8l8.9-8.9a3.7 3.7 0 0 1 5.2 5.2l-8.9 8.9a1.8 1.8 0 0 1-2.6-2.6l8.2-8.2"/></svg></button>
+      <button type="button" class="jmtool" id="jmshot" aria-label="Take a screenshot of this page" title="Screenshot this page (your browser asks what to share)" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3.2"/></svg></button>
+    </div>
     <textarea id="jmin" rows="2" aria-label="Your question for Jack Mo" placeholder="Ask about a scene, a cause, or a risk you wrote…"></textarea>
     <button type="submit" id="jmsend">Send</button>
   </form>
+  <div class="jmhint" id="jmhint">Attach a screenshot, photo or PDF of your work, or paste one with Ctrl+V. Crop out names and IDs first.</div>
+  <input type="file" id="jmfile" accept="image/png,image/jpeg,image/webp,image/gif,application/pdf" multiple hidden>
 </aside>
 <script>
-/* Ask Jack Mo: in-app chat. The page never holds the API key; the A² proxy (Apps Script) adds Jack Mo's
-   instructions and knowledge and calls Claude. The conversation lives in this tab only (sessionStorage). */
+/* Ask Jack Mo: in-app chat, v2. The page never holds the API key; the A² proxy (Apps Script) adds Jack Mo's
+   instructions and knowledge and calls Claude. The conversation lives in this tab only (sessionStorage).
+   v2: the header button toggles the panel; on wide screens the panel docks beside the page (the page makes room,
+   nothing is covered) and remembers being open; drag the left edge to resize; attach images/PDFs, paste or screenshot. */
 const JM_URL = 'https://script.google.com/macros/s/AKfycbwp-9O32oWrlvpo43KaARpKhh-AcLy6XAU5_YPK0HePfkT5nD-ulNq9lF0SrTnVDoqS/exec', JM_TOK = 'a2-jackmo-2026';
-const JM_HELLO = "Hi, I'm Jack Mo, the project manager on the Midtown MOB. Tell me which scene or row you're working on and what you're thinking, and I'll coach you through it.";
-let jmHist = [], jmBusy = false;
+const JM_HELLO = "Hi, I'm Jack Mo, the project manager on the Midtown MOB. Tell me which scene or row you're working on and what you're thinking, and I'll coach you through it. You can also attach a screenshot of your register.";
+const JM_MAX_ATT = 3, JM_MAX_PDF = 4.5e6, JM_IMG_EDGE = 1568;
+let jmHist = [], jmBusy = false, jmAtt = [];
 try { jmHist = JSON.parse(sessionStorage.getItem('jmHist') || '[]'); } catch (e) { jmHist = []; }
-function jmSave() { try { sessionStorage.setItem('jmHist', JSON.stringify(jmHist.slice(-40))); } catch (e) {} }
-function jmEsc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function jmSave() {   // file data stays in memory only; the tab keeps names and thumbnails
+  try { sessionStorage.setItem('jmHist', JSON.stringify(jmHist.slice(-40).map(m => m.att ? { role: m.role, content: m.content, att: m.att.map(a => ({ name: a.name, media: a.media, thumb: a.thumb })) } : m))); } catch (e) {}
+}
+function jmEsc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function jmFmt(t) {
   const lines = jmEsc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, '$1<i>$2</i>').split(/\n/);
   let html = '', list = false;
@@ -2329,41 +2380,152 @@ function jmFmt(t) {
   });
   return html + (list ? '</ul>' : '');
 }
+function jmAttHtml(att) {
+  if (!att || !att.length) return '';
+  return '<div class="jmatts">' + att.map(a => a.thumb && /^data:image\/(jpeg|png);base64,/.test(a.thumb)
+    ? '<img src="' + jmEsc(a.thumb) + '" alt="' + jmEsc(a.name) + '">'
+    : '<span class="f">' + (a.media === 'application/pdf' ? 'PDF · ' : '') + jmEsc(a.name) + '</span>').join('') + '</div>';
+}
 function jmRender(extra) {
   const log = document.getElementById('jmlog');
   log.innerHTML = '<div class="jmmsg assistant">' + jmFmt(JM_HELLO) + '</div>' +
-    jmHist.map(m => '<div class="jmmsg ' + m.role + '">' + jmFmt(m.content) + '</div>').join('') + (extra || '');
+    jmHist.map(m => '<div class="jmmsg ' + m.role + '">' + jmAttHtml(m.att) + jmFmt(m.content) + '</div>').join('') + (extra || '');
   log.scrollTop = log.scrollHeight;
 }
-function jmOpen(scene) {
-  const p = document.getElementById('jmchat'); p.hidden = false; jmRender();
+function jmHint(msg, warn) {
+  const h = document.getElementById('jmhint');
+  h.textContent = msg || 'Attach a screenshot, photo or PDF of your work, or paste one with Ctrl+V. Crop out names and IDs first.';
+  h.classList.toggle('warn', !!warn);
+}
+function jmIsOpen() { return !document.getElementById('jmchat').hidden; }
+function jmDock(on) {
+  document.body.classList.toggle('jm-docked', on);
+  ['askjmbtn', 'jmqr2'].forEach(id => { const b = document.getElementById(id); if (b) { b.setAttribute('aria-expanded', on ? 'true' : 'false'); b.setAttribute('aria-label', (on ? 'Close' : 'Open') + ' the Ask Jack Mo chat'); } });
+  try { sessionStorage.setItem('jmOpen', on ? '1' : '0'); } catch (e) {}
+  window.dispatchEvent(new Event('resize'));
+}
+function jmOpen(scene, quiet) {
+  const p = document.getElementById('jmchat'); p.hidden = false; jmDock(true); jmRender(); jmTray();
   const i = document.getElementById('jmin');
   if (scene && DATA.scenes && DATA.scenes[scene] && !i.value.trim()) i.value = "I'm looking at scene " + scene + ' (' + DATA.scenes[scene].title + '). ';
-  setTimeout(() => { i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 30);
+  if (!quiet) setTimeout(() => { i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 30);
 }
-function jmClose() { document.getElementById('jmchat').hidden = true; const b = document.getElementById('askjmbtn'); if (b) b.focus(); }
+function jmClose() { document.getElementById('jmchat').hidden = true; jmDock(false); const b = document.getElementById('askjmbtn'); if (b && b.offsetParent) b.focus(); }
+function jmToggle() { if (jmIsOpen()) jmClose(); else jmOpen(); }
+
+/* ---- attachments: images are resized in the browser (long edge 1568 px); PDFs up to 4.5 MB ---- */
+function jmB64(blob) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1] || ''); r.onerror = rej; r.readAsDataURL(blob); }); }
+function jmImg(file) { return new Promise((res, rej) => { const u = URL.createObjectURL(file), im = new Image(); im.onload = () => { URL.revokeObjectURL(u); res(im); }; im.onerror = () => { URL.revokeObjectURL(u); rej(new Error('img')); }; im.src = u; }); }
+function jmCanvas(im, edge) {
+  const s = Math.min(1, edge / Math.max(im.naturalWidth, im.naturalHeight)), c = document.createElement('canvas');
+  c.width = Math.max(1, Math.round(im.naturalWidth * s)); c.height = Math.max(1, Math.round(im.naturalHeight * s));
+  const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height); return c;
+}
+async function jmAddFile(file) {
+  if (jmAtt.length >= JM_MAX_ATT) { jmHint('Up to ' + JM_MAX_ATT + ' files per message.', true); return; }
+  const name = String(file.name || 'file').slice(0, 60), type = file.type || '';
+  try {
+    if (type === 'application/pdf') {
+      if (file.size > JM_MAX_PDF) { jmHint('That PDF is over 4.5 MB. Attach the page that matters as a screenshot instead.', true); return; }
+      jmAtt.push({ name, media: 'application/pdf', data: await jmB64(file), thumb: '' });
+    } else if (/^image\/(png|jpeg|webp|gif)$/.test(type)) {
+      const im = await jmImg(file), big = jmCanvas(im, JM_IMG_EDGE), small = jmCanvas(im, 160);
+      const keepPng = type === 'image/png' && file.size < 1.5e6 && big.width === im.naturalWidth;   // crisp text in screenshots
+      const url = keepPng ? big.toDataURL('image/png') : big.toDataURL('image/jpeg', 0.88);
+      jmAtt.push({ name, media: keepPng ? 'image/png' : 'image/jpeg', data: url.split(',')[1], thumb: small.toDataURL('image/jpeg', 0.7) });
+    } else { jmHint('Attach an image (PNG or JPG) or a PDF. For Word or Excel, save as PDF or take a screenshot.', true); return; }
+    jmHint(); jmTray();
+  } catch (e) { jmHint('That file could not be read. Try a PNG, JPG or PDF.', true); }
+}
+function jmTray() {
+  const t = document.getElementById('jmtray');
+  t.hidden = !jmAtt.length;
+  t.innerHTML = jmAtt.map((a, k) => '<div class="jmchip">' + (a.thumb ? '<img src="' + jmEsc(a.thumb) + '" alt="">' : '<div class="pdf">PDF</div>') +
+    '<span>' + jmEsc(a.name) + '</span><button type="button" data-k="' + k + '" aria-label="Remove ' + jmEsc(a.name) + '">✕</button></div>').join('');
+  const full = jmAtt.length >= JM_MAX_ATT || jmBusy;
+  document.getElementById('jmattach').disabled = full; document.getElementById('jmshot').disabled = full;
+}
+async function jmShot() {
+  let stream = null;
+  try {
+    stream = await navigator.mediaDevices.getDisplayMedia({ video: { displaySurface: 'browser' }, audio: false, preferCurrentTab: true, selfBrowserSurface: 'include', surfaceSwitching: 'exclude' });
+  } catch (e) { jmHint('Screenshot cancelled. You can also paste one with Ctrl+V.'); return; }
+  try {
+    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.srcObject = stream; await v.play();
+    await new Promise(r => setTimeout(r, 350));
+    const W = v.videoWidth, H = v.videoHeight; let cw = W;
+    const p = document.getElementById('jmchat');   // the capture is this tab -> leave the docked chat out of the picture
+    if (document.body.classList.contains('jm-docked') && Math.abs(W / H - innerWidth / innerHeight) < 0.04) cw = Math.round(W * (p.getBoundingClientRect().left / innerWidth));
+    const c = document.createElement('canvas'); c.width = cw; c.height = H; c.getContext('2d').drawImage(v, 0, 0, cw, H, 0, 0, cw, H);
+    const blob = await new Promise(r => c.toBlob(r, 'image/png'));
+    await jmAddFile(new File([blob], 'screenshot.png', { type: 'image/png' }));
+  } catch (e) { jmHint('The screenshot did not work here. Paste one with Ctrl+V instead.', true); }
+  finally { if (stream) stream.getTracks().forEach(t => t.stop()); document.getElementById('jmin').focus(); }
+}
+function jmPayload() {   // file data only on the latest two user turns that carry files (the proxy enforces the same)
+  const msgs = jmHist.slice(-24); let withData = 0;
+  return msgs.map(m => ({ m })).reverse().map(({ m }) => {
+    if (!m.att) return { role: m.role, content: m.content };
+    const send = m.role === 'user' && withData < 2 && m.att.some(a => a.data);
+    if (send) withData++;
+    return { role: m.role, content: m.content, att: m.att.map(a => send && a.data ? { name: a.name, media: a.media, data: a.data } : { name: a.name, media: a.media }) };
+  }).reverse();
+}
 async function jmSend(ev) {
   if (ev) ev.preventDefault();
   const i = document.getElementById('jmin'), t = i.value.trim();
-  if (!t || jmBusy) return false;
+  if ((!t && !jmAtt.length) || jmBusy) return false;
   jmBusy = true; document.getElementById('jmsend').disabled = true;
-  jmHist.push({ role: 'user', content: t }); i.value = ''; jmSave();
-  jmRender('<div class="jmtyping">Jack Mo is thinking…</div>');
+  const msg = { role: 'user', content: t };
+  if (jmAtt.length) msg.att = jmAtt.splice(0);
+  jmHist.push(msg); i.value = ''; jmSave(); jmTray(); jmHint();
+  jmRender('<div class="jmtyping">Jack Mo is ' + (msg.att ? 'looking at your file' + (msg.att.length > 1 ? 's' : '') : 'thinking') + '…</div>');
   let reply = null, err = null;
   try {
-    const r = await fetch(JM_URL, { method: 'POST', body: JSON.stringify({ tok: JM_TOK, messages: jmHist.slice(-24) }) });
+    const r = await fetch(JM_URL, { method: 'POST', body: JSON.stringify({ tok: JM_TOK, messages: jmPayload() }) });
     const d = await r.json(); reply = d.reply || null; err = d.error || (reply ? null : 'Jack Mo could not answer just now. Please try again.');
   } catch (e) { err = 'Jack Mo could not be reached. Check your connection and try again.'; }
   if (reply) { jmHist.push({ role: 'assistant', content: reply }); jmSave(); jmRender(); }
   else jmRender('<div class="jmmsg err">' + jmEsc(err) + '</div>');
-  jmBusy = false; document.getElementById('jmsend').disabled = false; i.focus();
+  jmBusy = false; document.getElementById('jmsend').disabled = false; jmTray(); i.focus();
   return false;
 }
+(function jmWire() {
+  const p = document.getElementById('jmchat'), fin = document.getElementById('jmfile'), grip = document.getElementById('jmgrip');
+  document.getElementById('jmattach').onclick = () => fin.click();
+  fin.onchange = async () => { for (const f of [...fin.files]) await jmAddFile(f); fin.value = ''; document.getElementById('jmin').focus(); };
+  const shot = document.getElementById('jmshot');
+  if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia && !matchMedia('(pointer: coarse)').matches) { shot.hidden = false; shot.onclick = jmShot; }
+  document.getElementById('jmtray').addEventListener('click', e => { const b = e.target.closest('button[data-k]'); if (b) { jmAtt.splice(+b.dataset.k, 1); jmTray(); jmHint(); document.getElementById('jmin').focus(); } });
+  document.getElementById('jmin').addEventListener('paste', async e => {
+    const files = [...((e.clipboardData && e.clipboardData.items) || [])].filter(it => it.kind === 'file').map(it => it.getAsFile()).filter(Boolean);
+    if (files.length) { e.preventDefault(); for (const f of files) await jmAddFile(f); }
+  });
+  p.addEventListener('dragover', e => { if ([...(e.dataTransfer.types || [])].includes('Files')) { e.preventDefault(); p.classList.add('dragover'); } });
+  p.addEventListener('dragleave', e => { if (!p.contains(e.relatedTarget)) p.classList.remove('dragover'); });
+  p.addEventListener('drop', async e => { e.preventDefault(); p.classList.remove('dragover'); for (const f of [...e.dataTransfer.files]) await jmAddFile(f); });
+  // resize: drag the left edge (or arrow keys on it); the width is remembered on this computer
+  const setW = w => { w = Math.round(Math.max(320, Math.min(w, Math.min(680, innerWidth * 0.55)))); document.documentElement.style.setProperty('--jmw', w + 'px'); return w; };
+  try { const w = parseInt(localStorage.getItem('jmw'), 10); if (w) setW(w); } catch (e) {}
+  const keep = w => { try { localStorage.setItem('jmw', String(w)); } catch (e) {} window.dispatchEvent(new Event('resize')); };
+  grip.addEventListener('pointerdown', e => {
+    e.preventDefault(); grip.setPointerCapture(e.pointerId); grip.classList.add('drag');
+    const move = ev => setW(innerWidth - ev.clientX);
+    const up = ev => { grip.releasePointerCapture(e.pointerId); grip.classList.remove('drag'); grip.removeEventListener('pointermove', move); grip.removeEventListener('pointerup', up); keep(setW(innerWidth - ev.clientX)); };
+    grip.addEventListener('pointermove', move); grip.addEventListener('pointerup', up);
+  });
+  grip.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return; e.preventDefault();
+    keep(setW(p.getBoundingClientRect().width + (e.key === 'ArrowLeft' ? 24 : -24)));
+  });
+  try { if (sessionStorage.getItem('jmOpen') === '1') jmOpen(null, true); } catch (e) {}   // stays open as the student moves around
+})();
 document.addEventListener('keydown', e => {
   if (e.target && e.target.id === 'jmin' && e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); jmSend(); }
-  if (e.key === 'Escape' && !document.getElementById('jmchat').hidden) jmClose();
+  if (e.key === 'Escape' && jmIsOpen() && document.getElementById('jmchat').contains(document.activeElement)) jmClose();
 });
 </script>
+<!-- JMV2:END -->
 
 
 <script>
@@ -2900,6 +3062,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 #a2dock[hidden]{display:none!important;}
 #a2dock.paused{border-left-color:#8a99ab;}
 #a2dock.low{bottom:12px;}
+@media (min-width:980px){body.jm-docked #a2dock{left:calc((100% - var(--jmw)) / 2);width:calc(100% - var(--jmw) - 32px);}}   /* centred in the page beside the docked Jack Mo chat */
 .vd-row{display:flex;align-items:center;gap:8px;}
 .vd-b{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#e6ebf1;
   display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .15s,transform .1s;}
@@ -3201,7 +3364,8 @@ var Ink=(function(){
   function vis(el){if(!el||el.isConnected===false)return null;var r=el.getBoundingClientRect();return (r.width<2||r.height<2)?null:r;}   // elements or Ranges
   // keep every shape on screen: clip to the viewport and stop above the player bar, so a box never reads as two stray lines
   function dockTop(){return dock.hidden?innerHeight:dock.getBoundingClientRect().top;}
-  function clipR(r){var m=12,L=Math.max(r.left,m),T=Math.max(r.top,m),Rr=Math.min(r.left+r.width,innerWidth-m),dt=dockTop(),
+  function rightEdge(){var p=document.getElementById('jmchat');return (p&&!p.hidden)?p.getBoundingClientRect().left:innerWidth;}   // never draw under the Jack Mo chat
+  function clipR(r){var m=12,L=Math.max(r.left,m),T=Math.max(r.top,m),Rr=Math.min(r.left+r.width,rightEdge()-m),dt=dockTop(),
       B=Math.min(r.top+r.height,(r.top<dt-40?dt-12:innerHeight-m));
     return (Rr-L<8||B-T<8)?r:{left:L,top:T,width:Rr-L,height:B-T};}
   function scroller(el){var p=el.parentElement;while(p&&p!==document.body&&p!==document.documentElement){var cs=getComputedStyle(p);
@@ -3242,7 +3406,7 @@ var Ink=(function(){
       if(!s)lift(t.el,t.r);
       var r=clipR(t.r),w=Math.round(r.width),h=Math.round(r.height);
       if(!s){var kind=t.kind;
-        if(!wide(w,h,kind)){var ox=radii(w,h)[0]*1.1-w/2;if(r.left-ox<2||r.left+w+ox>innerWidth-2)kind='rect';}   // a loop that would run off the screen -> a box
+        if(!wide(w,h,kind)){var ox=radii(w,h)[0]*1.1-w/2;if(r.left-ox<2||r.left+w+ox>rightEdge()-2)kind='rect';}   // a loop that would run off the screen -> a box
         s=make(t.key,w,h,kind);shapes.set(t.key,s);}
       else if(Math.abs(s.w-w)>6||Math.abs(s.h-h)>6)reshape(s,w,h);
       s.g.setAttribute('transform','translate('+r.left.toFixed(1)+' '+r.top.toFixed(1)+')');});
