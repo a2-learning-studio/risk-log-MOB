@@ -3247,17 +3247,20 @@ var Sub=(function(){
   function rows(){return [].slice.call(document.querySelectorAll('#tbody tr[id^="row-"]'));}
   function title(){var td=document.querySelector('#tbody tr.titlerow td');if(!td)return [];var r=document.createRange();r.selectNodeContents(td);return [r];}
   var L='#scr-overview .lobj';
+  function five(){return [].slice.call(document.querySelectorAll(L+' > .lo')).slice(0,5);}   // the project = Parts 1-5; Part 6 is the report
   var SUBS={
     'intro_1.mp3':[
       {find:'Welcome to the Project Risk Log',get:q('#scr-overview h1')},
       {find:'It shows the journey',get:null},
-      {find:'Five parts, one per module',get:q(L),kind:'rect'},
+      {find:'Five parts, one per module',get:five,kind:'rect'},
       {find:'You identify',get:q(L+' > .lo:nth-child(1)')},
       {find:'compound them',get:q(L+' > .lo:nth-child(2)')},
       {find:'assess them',get:q(L+' > .lo:nth-child(3)')},
       {find:'Then you respond',get:q(L+' > .lo:nth-child(4)')},
       {find:'finally, you control',get:q(L+' > .lo:nth-child(5)')},
-      {find:'Each part climbs',get:q(L),kind:'rect',end:'sent'}],
+      {find:'Each part climbs',get:five,kind:'rect',end:'sent'},
+      {find:'Read the five learning objectives',get:five,kind:'rect'},
+      {find:'Read the five learning objectives',w:'press Next',get:null}],
     'intro_2.mp3':[
       {find:'This is your project',get:q('#scr-welcome h1')},
       {find:'This page is your case',get:null}],
