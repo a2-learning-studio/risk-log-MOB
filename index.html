@@ -3079,14 +3079,27 @@ function hide(){Dock.cur=null;Dock.userPaused=false;Dock.lastPaused=null;dock.hi
 function overlayOpen(){return [].some.call(document.querySelectorAll('.ov,.lightbox,#faqov,.doneov'),function(o){return getComputedStyle(o).display!=='none';});}
 function watch(){if(!Dock.cur||!owner(Dock.cur)){hide();return;}   // the app stopped it (another guide, part switch, ✕) -> close the player
   dock.classList.toggle('low',overlayOpen()||!!document.querySelector('.scr.on'));}   // a window or an intro page is open -> sit at the very bottom
+var STOPS={intro:'stopIntroGuide',page:'stopPageGuide',row:'stopRowAudio',move:'stopMoveAudio'};
+var live=new Set();                                            // every guide audio made so far that has not finished
+function srcOf(a){return a.currentSrc||a.src||'';}
+// captions always follow the voice that is actually speaking (another guide's clean-up used to blank them)
+function syncCaptions(a){try{var want=(DATA.sent||{})[clipName(srcOf(a))]||null;
+  if(want&&capList!==want){capStart(srcOf(a));capTick(a.currentTime);}}catch(e){}}
+// safety net: one voice at a time, whoever started it
+function silenceOthers(a){var mine=owner(a),stopped=false;
+  live.forEach(function(x){if(x===a||x.paused)return;var o=owner(x);
+    if(o&&o!==mine&&typeof window[STOPS[o]]==='function'){try{window[STOPS[o]]();stopped=true;}catch(e){}}
+    else if(!o||o!==mine){try{x.pause();}catch(e){}}});
+  if(stopped)syncCaptions(a);}
 function adopt(a){
   try{a.defaultPlaybackRate=Dock.rate;a.playbackRate=Dock.rate;}catch(e){}
-  a.addEventListener('play',function(){show(a);});
+  live.add(a);
+  a.addEventListener('play',function(){silenceOthers(a);show(a);syncCaptions(a);});
   a.addEventListener('pause',function(){if(a!==Dock.cur)return;if(Dock.userPaused){paint();return;}
     setTimeout(function(){if(a===Dock.cur&&a.paused&&!Dock.userPaused)hide();},90);});
-  a.addEventListener('ended',function(){if(a===Dock.cur)hide();});
-  a.addEventListener('error',function(){if(a===Dock.cur)hide();});
-  a.addEventListener('timeupdate',function(){if(a===Dock.cur)paint();});
+  a.addEventListener('ended',function(){live.delete(a);if(a===Dock.cur)hide();});
+  a.addEventListener('error',function(){live.delete(a);if(a===Dock.cur)hide();});
+  a.addEventListener('timeupdate',function(){if(a!==Dock.cur)return;paint();if(!a.paused)syncCaptions(a);});
   a.addEventListener('loadedmetadata',function(){if(a===Dock.cur)paint();});}
 // every guide is created with `new Audio(src)` -> adopt each one as it is made
 var NativeAudio=window.Audio;
@@ -3124,6 +3137,7 @@ function wrapToggle(name,same){var f=window[name];if(typeof f!=='function'||f.__
   var w=function(){var args=arguments;
     if(Dock.cur&&same.apply(null,args)){var ev=args[args.length-1];
       if(ev&&typeof ev.stopPropagation==='function')ev.stopPropagation();toggle();return;}
+    stopAllVoices();                                            // a new guide always silences every other one first (the row ▶ used to leave the page tour talking)
     return f.apply(this,args);};
   w.__a2=true;window[name]=w;}
 wrapToggle('playIntroGuide',function(n){try{return !!introAudio&&introAudio===Dock.cur&&introN===n;}catch(e){return false;}});
