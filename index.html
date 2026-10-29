@@ -2946,11 +2946,13 @@ body.a2paused .playing i,body.a2paused .playing b,body.a2paused .playing span{an
 
 /* back to the intro pages: workspace menu */
 .a2mw{position:relative;display:inline-flex;}
+.idbar .a2mw{margin-left:auto;}
+.idbar .a2mw ~ .lnk.chg{margin-left:0;}
 .idbar .lnk.a2introbtn{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;text-decoration:none;font-weight:700;color:var(--navy);
   border:1px solid var(--line);background:#fff;border-radius:7px;padding:4px 9px 4px 8px;}
 .idbar .lnk.a2introbtn:hover{border-color:var(--teal);color:var(--teal);}
 .idbar .lnk.a2introbtn[aria-expanded="true"]{border-color:var(--teal);background:#EAF3F0;}
-#a2intromenu{position:absolute;top:calc(100% + 6px);left:0;z-index:85;width:300px;background:#fff;border:1px solid var(--line);border-radius:10px;
+#a2intromenu{position:absolute;top:calc(100% + 6px);right:0;z-index:85;width:300px;background:#fff;border:1px solid var(--line);border-radius:10px;
   box-shadow:0 14px 40px rgba(19,36,59,.22);padding:6px;}
 #a2intromenu[hidden]{display:none;}
 #a2intromenu button{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;background:none;border:0;border-radius:7px;padding:8px 9px;cursor:pointer;color:var(--ink);font-family:inherit;}
@@ -3305,7 +3307,7 @@ var Sub=(function(){
 })();
 
 /* ======================= 4 · back to the intro pages ======================= */
-var INTRO=[['scr-overview','Course overview','One project, six parts'],
+var INTRO=[['scr-overview','Course overview','The five project parts and the final report'],
            ['scr-welcome','The job','The Midtown MOB brief and site photos'],
            ['scr-jackmo','Meet Jack Mo','Your AI project manager'],
            ['scr-identity','Your seat','Change team member (asks you first)']];
@@ -3324,6 +3326,7 @@ function closeMenu(){if(menu&&!menu.hidden){menu.hidden=true;if(bb)bb.setAttribu
 function openMenu(){if(!menu)return;menu.hidden=false;bb.setAttribute('aria-expanded','true');var f=menu.querySelector('button');if(f)f.focus();}
 if(bb){
   var mw=document.createElement('span');mw.className='a2mw';bb.parentNode.insertBefore(mw,bb);mw.appendChild(bb);
+  var chg=$('chgid');if(chg&&chg.parentNode===mw.parentNode)chg.parentNode.insertBefore(mw,chg);   // his ask: right beside "change team member"
   bb.classList.add('a2introbtn');bb.innerHTML=ICON.book+'<span>Intro pages</span>'+ICON.caret;
   bb.title='Go back to the intro pages: course overview, the job, Jack Mo, your seat';
   bb.setAttribute('aria-haspopup','menu');bb.setAttribute('aria-expanded','false');
