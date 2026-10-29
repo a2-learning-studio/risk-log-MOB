@@ -168,5 +168,605 @@
   "voice": "g14YnDYCsy3k7XLlcKlO",
   "model": "eleven_multilingual_v2",
   "dur": 45.37
+ },
+ "clue_MOB-01_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 25.91
+ },
+ "clue_MOB-01_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 33.16
+ },
+ "clue_MOB-01_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.33
+ },
+ "clue_MOB-01_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 55.31
+ },
+ "clue_MOB-02_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 26.61
+ },
+ "clue_MOB-02_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 37.8
+ },
+ "clue_MOB-02_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.19
+ },
+ "clue_MOB-02_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 56.88
+ },
+ "clue_MOB-03_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 26.37
+ },
+ "clue_MOB-03_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 33.2
+ },
+ "clue_MOB-03_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 40.63
+ },
+ "clue_MOB-03_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 56.65
+ },
+ "clue_MOB-04_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 27.4
+ },
+ "clue_MOB-04_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 34.32
+ },
+ "clue_MOB-04_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.14
+ },
+ "clue_MOB-04_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 54.1
+ },
+ "clue_MOB-05_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 27.35
+ },
+ "clue_MOB-05_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 32.97
+ },
+ "clue_MOB-05_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 40.03
+ },
+ "clue_MOB-05_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 58.0
+ },
+ "clue_MOB-06_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 27.26
+ },
+ "clue_MOB-06_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 34.45
+ },
+ "clue_MOB-06_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 39.84
+ },
+ "clue_MOB-06_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 53.08
+ },
+ "clue_MOB-07_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 26.19
+ },
+ "clue_MOB-07_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 35.48
+ },
+ "clue_MOB-07_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.0
+ },
+ "clue_MOB-07_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 56.47
+ },
+ "clue_MOB-08_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 25.07
+ },
+ "clue_MOB-08_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.18
+ },
+ "clue_MOB-08_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 40.03
+ },
+ "clue_MOB-08_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 55.63
+ },
+ "clue_MOB-09_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.23
+ },
+ "clue_MOB-09_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 34.04
+ },
+ "clue_MOB-09_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.0
+ },
+ "clue_MOB-09_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 56.05
+ },
+ "clue_MOB-10_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 28.09
+ },
+ "clue_MOB-10_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 34.18
+ },
+ "clue_MOB-10_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 39.38
+ },
+ "clue_MOB-10_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 52.98
+ },
+ "given_MOB-01_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 46.25
+ },
+ "given_MOB-01_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 113.45
+ },
+ "given_MOB-01_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 132.12
+ },
+ "given_MOB-01_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 172.06
+ },
+ "given_MOB-02_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 47.64
+ },
+ "given_MOB-02_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 122.64
+ },
+ "given_MOB-02_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 117.49
+ },
+ "given_MOB-02_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 169.04
+ },
+ "given_MOB-03_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 44.58
+ },
+ "given_MOB-03_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 126.31
+ },
+ "given_MOB-03_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 122.69
+ },
+ "given_MOB-03_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 159.05
+ },
+ "given_MOB-04_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 44.95
+ },
+ "given_MOB-04_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 122.46
+ },
+ "given_MOB-04_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 119.25
+ },
+ "given_MOB-04_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 158.08
+ },
+ "given_MOB-05_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 44.67
+ },
+ "given_MOB-05_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 115.49
+ },
+ "given_MOB-05_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 121.53
+ },
+ "given_MOB-05_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 150.56
+ },
+ "given_MOB-06_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 45.14
+ },
+ "given_MOB-06_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 121.34
+ },
+ "given_MOB-06_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 127.47
+ },
+ "given_MOB-06_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 123.34
+ },
+ "given_MOB-07_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 45.6
+ },
+ "given_MOB-07_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 127.57
+ },
+ "given_MOB-07_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 127.15
+ },
+ "given_MOB-07_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 159.38
+ },
+ "given_MOB-08_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 45.74
+ },
+ "given_MOB-08_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 118.46
+ },
+ "given_MOB-08_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 124.41
+ },
+ "given_MOB-08_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 165.18
+ },
+ "given_MOB-09_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 46.25
+ },
+ "given_MOB-09_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 113.77
+ },
+ "given_MOB-09_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 115.31
+ },
+ "given_MOB-09_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 157.52
+ },
+ "given_MOB-10_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 42.95
+ },
+ "given_MOB-10_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 118.19
+ },
+ "given_MOB-10_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 125.57
+ },
+ "given_MOB-10_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 163.28
+ },
+ "own_MOB-01_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 28.7
+ },
+ "own_MOB-01_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.21
+ },
+ "own_MOB-01_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 21.41
+ },
+ "own_MOB-01_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 39.19
+ },
+ "own_MOB-02_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.07
+ },
+ "own_MOB-02_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 35.2
+ },
+ "own_MOB-02_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 21.73
+ },
+ "own_MOB-02_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 41.84
+ },
+ "own_MOB-03_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.46
+ },
+ "own_MOB-03_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.86
+ },
+ "own_MOB-03_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 22.94
+ },
+ "own_MOB-03_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 38.45
+ },
+ "own_MOB-05_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 28.46
+ },
+ "own_MOB-05_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.55
+ },
+ "own_MOB-05_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 23.54
+ },
+ "own_MOB-05_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 44.16
+ },
+ "own_MOB-06_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.53
+ },
+ "own_MOB-06_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 31.95
+ },
+ "own_MOB-06_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 25.12
+ },
+ "own_MOB-06_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 39.1
+ },
+ "own_MOB-07_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.67
+ },
+ "own_MOB-07_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.95
+ },
+ "own_MOB-07_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 26.93
+ },
+ "own_MOB-07_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 39.61
+ },
+ "own_MOB-08_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.46
+ },
+ "own_MOB-08_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.32
+ },
+ "own_MOB-08_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 23.22
+ },
+ "own_MOB-08_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 40.72
+ },
+ "own_MOB-09_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 30.6
+ },
+ "own_MOB-09_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 29.62
+ },
+ "own_MOB-09_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 20.71
+ },
+ "own_MOB-09_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 40.59
+ },
+ "own_MOB-10_p2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 28.93
+ },
+ "own_MOB-10_p3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 35.34
+ },
+ "own_MOB-10_p4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 23.17
+ },
+ "own_MOB-10_p5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 38.4
+ },
+ "page_P2.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 62.09
+ },
+ "page_P3.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 64.18
+ },
+ "page_P4.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 65.24
+ },
+ "page_P5.mp3": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "model": "eleven_multilingual_v2",
+  "dur": 76.99
  }
 }
