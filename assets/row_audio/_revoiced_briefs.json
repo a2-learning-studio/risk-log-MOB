@@ -1,0 +1,52 @@
+{
+ "MOB-01": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 80.48,
+  "sentences": 14
+ },
+ "MOB-02": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 78.08,
+  "sentences": 22
+ },
+ "MOB-03": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 78.16,
+  "sentences": 21
+ },
+ "MOB-04": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 77.56,
+  "sentences": 20
+ },
+ "MOB-05": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 74.8,
+  "sentences": 16
+ },
+ "MOB-06": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 91.88,
+  "sentences": 17
+ },
+ "MOB-07": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 90.16,
+  "sentences": 26
+ },
+ "MOB-08": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 89.68,
+  "sentences": 17
+ },
+ "MOB-09": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 82.52,
+  "sentences": 23
+ },
+ "MOB-10": {
+  "voice": "g14YnDYCsy3k7XLlcKlO",
+  "dur": 82.08,
+  "sentences": 21
+ }
+}
